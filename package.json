@@ -1,0 +1,16 @@
+{
+    "name": "xmake-build-system",
+    "version": "2.9.7",
+    "description": "A cross-platform build utility based on Lua",
+    "repository": "https://github.com/xmake-io/xmake-wheel",
+    "homepage": "https://github.com/xmake-io/xmake-wheel#readme",
+    "bugs": "https://github.com/xmake-io/xmake-wheel/issues",
+    "license": "GPL-3.0-only",
+    "keywords": [
+        "xmake"
+    ],
+    "scripts": {
+        "build": "scripts/build.py",
+        "prepack": ""
+    }
+}

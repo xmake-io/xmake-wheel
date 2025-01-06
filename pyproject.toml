@@ -43,7 +43,7 @@ Download = "https://github.com/xmake-io/xmake-wheel/releases"
 Source = "https://github.com/xmake-io/xmake-wheel"
 
 [tool.hatch.build.hooks.custom]
-path = "build.py"
+path = "scripts/build.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/xmake_wheel"]
