@@ -21,7 +21,7 @@ dependencies = { 'lua >= 5.1' }
 test_dependencies = { }
 
 source = {
-  url = repo_url .. '/archive/' .. git_ref .. '.zip',
+  url = repo_url .. '/archive/v' .. git_ref .. '.zip',
   dir = 'xmake-' .. git_ref,
 }
 
