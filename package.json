@@ -11,9 +11,12 @@
     ],
     "bin": {
         "xmake": "bin/xmake",
-        "xrepo": "bin/xrepo"
+        "xrepo": "bin/xmake"
+    },
+    "devDependencies": {
+        "tar": "^7.4.3"
     },
     "scripts": {
-        "prepack": "scripts/build.py && scripts/install.js"
+        "prepack": "scripts/build.cjs"
     }
 }
