@@ -17,6 +17,6 @@
         "tar": "^7.4.3"
     },
     "scripts": {
-        "prepack": "scripts/build.cjs"
+        "prepack": "node scripts/build.cjs"
     }
 }
