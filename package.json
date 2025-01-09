@@ -9,8 +9,11 @@
     "keywords": [
         "xmake"
     ],
+    "bin": {
+        "xmake": "bin/xmake",
+        "xrepo": "bin/xrepo"
+    },
     "scripts": {
-        "build": "scripts/build.py",
-        "prepack": ""
+        "build": "scripts/build.py && scripts/install.js"
     }
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 r"""Build
 =========
 
@@ -8,8 +9,7 @@ import os
 import subprocess
 import tarfile
 import urllib.request
-
-from hatchling.builders.hooks.plugin.interface import BuildHookInterface
+from contextlib import suppress
 
 try:
     import tomllib
@@ -40,9 +40,12 @@ def main():
         subprocess.run(["make", "install"], cwd=cwd)
 
 
-class CustomHook(BuildHookInterface):
-    def initialize(self, version, build_data) -> None:
-        main()
+with suppress(ImportError):
+    from hatchling.builders.hooks.plugin.interface import BuildHookInterface
+
+    class CustomHook(BuildHookInterface):
+        def initialize(self, version, build_data) -> None:
+            main()
 
 
 if __name__ == "__main__":
