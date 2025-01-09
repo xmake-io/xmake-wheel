@@ -4,7 +4,7 @@
 
 WIP
 
-different other languages, python build system is consist of two parts:
+different from other languages, python build system is consist of two parts:
 
 ### Frontends
 
