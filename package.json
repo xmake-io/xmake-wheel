@@ -14,6 +14,6 @@
         "xrepo": "bin/xrepo"
     },
     "scripts": {
-        "build": "scripts/build.py && scripts/install.js"
+        "prepack": "scripts/build.py && scripts/install.js"
     }
 }
