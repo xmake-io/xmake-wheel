@@ -72,6 +72,7 @@ jobs:
           cache: 'npm'
       - name: Build
         run: |
+          chmod +x prebuilds/*/bin/*
           npm install
           npm pack
       - uses: softprops/action-gh-release@v2

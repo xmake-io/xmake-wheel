@@ -11,7 +11,7 @@
     ],
     "bin": {
         "xmake": "bin/xmake",
-        "xrepo": "bin/xmake"
+        "xrepo": "bin/xrepo"
     },
     "devDependencies": {
         "tar": "^7.4.3"
