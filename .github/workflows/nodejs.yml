@@ -55,12 +55,24 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
+    needs:
+      - build
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           pattern: artifact-*
           merge-multiple: true
           path: prebuilds
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          registry-url: https://registry.npmjs.org
+          cache: 'npm'
+      - name: Build
+        run: |
+          npm install
+          npm pack
       - uses: softprops/action-gh-release@v2
         with:
           files: '*.tgz'
