@@ -1,6 +1,6 @@
 {
     "name": "xmake-build-system",
-    "version": "2.9.7",
+    "version": "2.9.4",
     "description": "A cross-platform build utility based on Lua",
     "repository": "https://github.com/xmake-io/xmake-wheel",
     "homepage": "https://github.com/xmake-io/xmake-wheel#readme",
@@ -11,7 +11,7 @@
     ],
     "bin": {
         "xmake": "bin/xmake",
-        "xrepo": "bin/xmake"
+        "xrepo": "bin/xrepo"
     },
     "devDependencies": {
         "tar": "^7.4.3"
