@@ -28,15 +28,21 @@ async function download(url, file) {
   });
 }
 
+function run(...args) {
+  const cmd = spawnSync(...args);
+  console.log(cmd.stdout.toString())
+  console.error(cmd.stderr.toString())
+}
+
 (async () => {
   if (!fs.existsSync(file))
     await download(url, file)
   if (!fs.existsSync(cwd))
     await tar.x({file: file, C: '.'})
   if (!fs.existsSync(resolve(cwd, 'makefile')))
-    spawnSync("./configure", [`--prefix=${prefix}`], {cwd: cwd})
+    run("sh", ['configure', `--prefix=${prefix}`], {cwd: cwd})
   if (!fs.existsSync(resolve(cwd, 'build')))
-    spawnSync("make", {cwd: cwd})
+    run("make", {cwd: cwd})
   if (!fs.existsSync(resolve(prefix, 'bin', 'xmake')))
-    spawnSync("make", ["install"], {cwd: cwd})
+    run("make", ["install"], {cwd: cwd})
 })()
