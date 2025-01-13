@@ -51,10 +51,11 @@ Compared to other solutions:
 
 examples:
 
-- [1_hello_world](examples/nodejs/1_hello_world)
+- [1_hello_world](examples/nodejs/1_hello_world): use this project to replace
+  [node-gyp](https://github.com/nodejs/node-gyp)
 - [coc-rime](https://github.com/tonyfettes/coc-rime): use
   [pkg-prebuilds](https://github.com/julusian/pkg-prebuilds) to replace
-  [node-gyp-build](https://github.com/prebuild/node-gyp-build)
+  [prebuildify](https://github.com/prebuild/prebuildify)
 
 ## [luarocks.org](https://luarocks.org/modules/Freed-Wu/xmake/)
 

@@ -5,11 +5,11 @@
   "main": "hello.js",
   "private": true,
   "dependencies": {
-    "xmake-build-system": "^2.9.7",
-    "bindings": "~1.5.0"
+    "bindings": "~1.5.0",
+    "xmake-build-system": "^2.9.7"
   },
   "scripts": {
-    "prepack": "xmake -y && xmake install",
+    "install": "xmake -y && xmake install",
     "test": "node hello.js"
   }
 }
