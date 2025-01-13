@@ -46,6 +46,10 @@ repos:
     rev: 3.0.0
     hooks:
       - id: check-mailmap
+      # https://github.com/koalaman/shellcheck/issues/2909
+      - id: shellcheck
+        exclude_types:
+          - zsh
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.5
     hooks:
@@ -78,6 +82,10 @@ repos:
     rev: "20240903.09"
     hooks:
       - id: perltidy
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.10.0-2
+    hooks:
+      - id: shfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.4
     hooks:
@@ -98,4 +106,5 @@ repos:
 
 ci:
   skip:
+    - shellcheck
     - pyright
