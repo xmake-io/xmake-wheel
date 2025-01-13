@@ -58,6 +58,9 @@ repos:
     rev: v1.35.1
     hooks:
       - id: yamllint
+        # copied from
+        # https://github.com/nodejs/node-addon-examples/blob/main/.clang-format
+        exclude: ^\.clang-format$
   - repo: https://github.com/executablebooks/mdformat
     rev: 0.7.21
     hooks:
@@ -95,6 +98,13 @@ repos:
     rev: v1.1.391
     hooks:
       - id: pyright
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v19.1.5
+    hooks:
+      - id: clang-format
+        exclude_types:
+          - json
+          - javascript
   - repo: https://github.com/lunarmodules/luacheck
     rev: v1.2.0
     hooks:

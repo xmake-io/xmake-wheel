@@ -10,7 +10,7 @@ static napi_value Method(napi_env env, napi_callback_info info) {
 }
 
 #define DECLARE_NAPI_METHOD(name, func)                                        \
-  { name, 0, func, 0, 0, 0, napi_default, 0 }
+  {name, 0, func, 0, 0, 0, napi_default, 0}
 
 static napi_value Init(napi_env env, napi_value exports) {
   napi_status status;
