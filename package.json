@@ -1,23 +1,22 @@
 {
-    "name": "xmake-build-system",
-    "version": "2.9.7",
-    "description": "A cross-platform build utility based on Lua",
-    "repository": "https://github.com/xmake-io/xmake-wheel",
-    "homepage": "https://github.com/xmake-io/xmake-wheel#readme",
-    "bugs": "https://github.com/xmake-io/xmake-wheel/issues",
-    "license": "GPL-3.0-only",
-    "keywords": [
-        "xmake"
-    ],
-    "bin": {
-        "xmake": "bin/xmake",
-        "xrepo": "bin/xrepo"
-    },
-    "devDependencies": {
-        "tar": "^7.4.3"
-    },
-    "scripts": {
-        "prepack": "node scripts/build.cjs",
-        "test": "scripts/test.sh"
-    }
+  "name": "xmake-build-system",
+  "version": "2.9.7",
+  "description": "A cross-platform build utility based on Lua",
+  "repository": "https://github.com/xmake-io/xmake-wheel",
+  "homepage": "https://github.com/xmake-io/xmake-wheel#readme",
+  "bugs": "https://github.com/xmake-io/xmake-wheel/issues",
+  "license": "GPL-3.0-only",
+  "keywords": ["xmake"],
+  "bin": {
+    "xmake": "bin/xmake",
+    "xrepo": "bin/xrepo"
+  },
+  "devDependencies": {
+    "biome": "^0.3.3",
+    "tar": "^7.4.3"
+  },
+  "scripts": {
+    "prepack": "node scripts/build.cjs",
+    "test": "scripts/test.sh"
+  }
 }
