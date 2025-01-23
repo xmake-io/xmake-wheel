@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+const os = require('os');
+const path = require('path');
+const {spawnSync} = require('child_process');
+const {resolve} = require('path');
+const bin = resolve(__dirname, '..', 'prebuilds', `xmake-${os.platform()}-${os.arch()}`, 'bin', path.basename(__filename));
+const cmd = spawnSync(bin, process.argv.slice(2))
+console.log(cmd.stdout.toString())
+console.error(cmd.stderr.toString())
