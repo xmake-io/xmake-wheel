@@ -9,7 +9,7 @@
   "keywords": ["xmake"],
   "bin": {
     "xmake": "bin/xmake",
-    "xrepo": "bin/xrepo"
+    "xrepo": "bin/xmake"
   },
   "devDependencies": {
     "biome": "^0.3.3",
