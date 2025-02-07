@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "xmake-wheel"
-version = "2.9.7"
+version = "2.9.8"
 description = "A cross-platform build utility based on Lua"
 readme = "README.md"
 requires-python = ">= 3.10"
