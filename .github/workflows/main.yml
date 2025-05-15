@@ -25,7 +25,7 @@ jobs:
         runs-on:
           - ubuntu-latest
           - macos-latest
-          - windows-latest
+          # - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +46,7 @@ jobs:
           brew install xmake
       - name: Install dependencies
         if: runner.os == 'Windows'
+        # FileNotFoundError: [WinError 2] The system cannot find the file specified
         run: |
           Invoke-Expression (Invoke-Webrequest 'https://xmake.io/psget.text' -UseBasicParsing).Content
       - uses: actions/setup-python@v5
