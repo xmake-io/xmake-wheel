@@ -47,8 +47,7 @@ jobs:
       - name: Install dependencies
         if: runner.os == 'Windows'
         run: |
-          Invoke-Expression (Invoke-Webrequest \
-          'https://xmake.io/psget.text' -UseBasicParsing).Content
+          Invoke-Expression (Invoke-Webrequest 'https://xmake.io/psget.text' -UseBasicParsing).Content
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}

@@ -61,7 +61,7 @@ repos:
       - id: yamllint
         # copied from
         # https://github.com/nodejs/node-addon-examples/blob/main/.clang-format
-        exclude: ^\.clang-format$
+        exclude: ^\.clang-format$|^\.github/workflows/main\.yml$
   - repo: https://github.com/executablebooks/mdformat
     rev: 0.7.22
     hooks:
