@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         if: runner.os == 'Windows'
         run: |
-          winget install xmake
+          scoop install xmake
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
