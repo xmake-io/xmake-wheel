@@ -33,6 +33,20 @@ jobs:
         with:
           repository: xmake-io/xmake
           path: xmake-src
+      - name: Install dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo add-apt-repository ppa:xmake-io/xmake
+          sudo apt-get -y update
+          sudo apt-get -y install xmake
+      - name: Install dependencies
+        if: runner.os == 'macOS'
+        run: |
+          brew install xmake
+      - name: Install dependencies
+        if: runner.os == 'Windows'
+        run: |
+          choco install xmake
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
@@ -59,6 +73,11 @@ jobs:
         with:
           repository: xmake-io/xmake
           path: xmake-src
+      - name: Install dependencies
+        run: |
+          sudo add-apt-repository ppa:xmake-io/xmake
+          sudo apt-get -y update
+          sudo apt-get -y install xmake
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
