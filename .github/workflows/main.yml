@@ -69,16 +69,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
-        with:
-          repository: xmake-io/xmake
-          path: xmake-src
-          submodules: true
-      - name: Install dependencies
-        run: |
-          sudo add-apt-repository ppa:xmake-io/xmake
-          sudo apt-get -y update
-          sudo apt-get -y install xmake
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
