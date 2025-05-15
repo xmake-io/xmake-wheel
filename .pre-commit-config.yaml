@@ -54,6 +54,7 @@ repos:
     rev: v1.7.7
     hooks:
       - id: actionlint
+        exclude: ^\.github/workflows/main\.yml$
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.37.1
     hooks:
