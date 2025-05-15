@@ -2,7 +2,16 @@
 
 ## [PYPI](https://pypi.org/project/xmake-wheel)
 
-WIP
+```sh
+pip install xmake-wheel
+xmake --help
+```
+
+```python
+from xmake import main
+
+main("--help")
+```
 
 Refer [xmake-python](https://github.com/xmake-io/xmake-python).
 
