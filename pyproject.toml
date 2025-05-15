@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling", "pygit2"]
-build-backend = "hatchling.build"
+requires = ["xmake-python"]
+build-backend = "xmake_python"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
@@ -27,7 +27,12 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ['tomli >= 1.1.0; python_version < "3.11"']
+
+[tool.xmake.module]
+name = "xmake"
+
+[tool.xmake.xmaker]
+root = "xmake-src/core"
 
 [[project.authors]]
 name = "ruki"
@@ -41,19 +46,6 @@ Homepage = "https://xmake-wheel.readthedocs.io"
 Download = "https://github.com/xmake-io/xmake-wheel/releases"
 "Bug Report" = "https://github.com/xmake-io/xmake-wheel/issues"
 Source = "https://github.com/xmake-io/xmake-wheel"
-
-[tool.hatch.build.hooks.custom]
-path = "scripts/build.py"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/xmake_wheel"]
-
-[tool.hatch.build.targets.wheel.shared-scripts]
-"usr/bin/xmake" = "xmake"
-"usr/bin/xrepo" = "xrepo"
-
-[tool.hatch.build.targets.wheel.shared-data]
-"usr/share" = "share"
 
 [tool.mdformat]
 number = true

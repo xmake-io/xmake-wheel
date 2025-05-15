@@ -29,6 +29,10 @@ jobs:
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: xmake-io/xmake
+          path: xmake-src
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
@@ -51,6 +55,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: xmake-io/xmake
+          path: xmake-src
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
