@@ -33,6 +33,7 @@ jobs:
         with:
           repository: xmake-io/xmake
           path: xmake-src
+          submodules: true
       - name: Install dependencies
         if: runner.os == 'Linux'
         run: |
@@ -46,7 +47,7 @@ jobs:
       - name: Install dependencies
         if: runner.os == 'Windows'
         run: |
-          choco install xmake
+          winget install xmake
       - uses: actions/setup-python@v5
         with:
           python-version: ${{env.python-version}}
@@ -73,6 +74,7 @@ jobs:
         with:
           repository: xmake-io/xmake
           path: xmake-src
+          submodules: true
       - name: Install dependencies
         run: |
           sudo add-apt-repository ppa:xmake-io/xmake
