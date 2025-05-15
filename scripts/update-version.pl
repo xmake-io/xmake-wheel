@@ -9,3 +9,4 @@ BEGIN {
 
 s/(?<=version = ")[^"]+/$version/;
 s/(?<=__version__ = ")[^"]+/$version/;
+s/(?<=  "version": ")[^"]+/$version/;
