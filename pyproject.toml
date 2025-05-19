@@ -1,5 +1,5 @@
 [build-system]
-requires = ["xmake-python", "xmake-wheel"]
+requires = ["xmake-python"]
 build-backend = "xmake_python"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
@@ -87,7 +87,7 @@ exclude_lines = [
 
 [tool.cibuildwheel]
 archs = ["all"]
-build = "cp312-manylinux_*"
+build = "cp312-*"
 build-frontend = "build[uv]"
 
 [tool.cibuildwheel.environment]
