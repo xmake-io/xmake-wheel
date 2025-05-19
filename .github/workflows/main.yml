@@ -34,28 +34,10 @@ jobs:
           repository: xmake-io/xmake
           path: xmake-src
           submodules: true
-      - name: Install dependencies
-        if: runner.os == 'Linux'
+      - uses: xmake-io/github-action-setup-xmake@v1
+      - uses: astral-sh/setup-uv@v6
+      - name: Build wheel
         run: |
-          sudo add-apt-repository ppa:xmake-io/xmake
-          sudo apt-get -y update
-          sudo apt-get -y install xmake
-      - name: Install dependencies
-        if: runner.os == 'macOS'
-        run: |
-          brew install xmake
-      - name: Install dependencies
-        if: runner.os == 'Windows'
-        # FileNotFoundError: [WinError 2] The system cannot find the file specified
-        run: |
-          Invoke-Expression (Invoke-Webrequest 'https://xmake.io/psget.text' -UseBasicParsing).Content
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{env.python-version}}
-          cache: ${{env.cache}}
-      - name: Install dependencies
-        run: |
-          pip install uv
           uv build --wheel
       - uses: actions/upload-artifact@v4
         with:
@@ -69,13 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{env.python-version}}
-          cache: ${{env.cache}}
-      - name: Install dependencies
-        run: |
-          pip install uv
+      - uses: astral-sh/setup-uv@v6
       - name: Build sdist
         run: |
           uv build --sdist
