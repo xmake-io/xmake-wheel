@@ -70,9 +70,7 @@ jobs:
         run: |
           sudo apt-get -y update
           sudo apt-get -y install rename
-          rename \
-            's/linux/manylinux_2_17/;s/mingw_x86_64_msvcrt_gnu/win_amd64/' \
-            dist/*
+          rename 's/linux/manylinux_2_17/;s/cp...-cp.../py3-none/' dist/*
       - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
