@@ -16,6 +16,7 @@ env:
   files: dist/*
   python-version: 3.x
   cache: pip
+  XMAKE_ROOT: y
 
 jobs:
   build-wheels-and-test:
