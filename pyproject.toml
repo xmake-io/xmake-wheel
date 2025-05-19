@@ -1,5 +1,5 @@
 [build-system]
-requires = ["xmake-python"]
+requires = ["xmake-python", "xmake-wheel"]
 build-backend = "xmake_python"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
@@ -87,8 +87,10 @@ exclude_lines = [
 
 [tool.cibuildwheel]
 archs = ["all"]
-# https://github.com/astral-sh/uv/issues/10260
-skip = "*37-* *38-* *39-* *310-* *311-* *-musllinux_s390x *-musllinux_ppc64*"
+build = "cp312-manylinux_*"
 build-frontend = "build[uv]"
-before-test = "pip install .[dev]"
-test-command = "pytest {project}"
+
+# https://github.com/astral-sh/uv/issues/10260
+[[tool.cibuildwheel.overrides]]
+select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
+build-frontend = "build"
