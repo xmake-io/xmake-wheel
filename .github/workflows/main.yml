@@ -39,6 +39,9 @@ jobs:
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.23
         if: runner.os == 'Linux'
+      - if: runner.os != 'Linux'
+        run: |
+          uv build --wheel
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-${{matrix.runs-on}}
