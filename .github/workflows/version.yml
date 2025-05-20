@@ -19,5 +19,5 @@ jobs:
       - name: Update version
         run: |
           scripts/update-version.pl pyproject.toml src/xmake/__init__.py \
-            package.json
+            package.json .github/workflows/main.yml
       - uses: stefanzweifel/git-auto-commit-action@v5
