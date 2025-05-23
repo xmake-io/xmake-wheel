@@ -30,11 +30,14 @@ target("phony")
 do
     set_kind("phony")
     add_packages("xmake")
+    add_installfiles("src/xmake_wheel/*", { prefixdir = "$(xmake-platlib)/xmake_wheel" })
     before_install(
         function(target)
             local prefix = target:pkg("xmake"):installdir()
-            target:add("installfiles", path.join(prefix, "bin/*"), "$(xmake-script)")
-            target:add("installfiles", path.join(prefix, "share"), "$(xmake-data)")
+            target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(xmake-scripts)" })
+            -- https://github.com/xmake-io/xmake/discussions/6498
+            -- target:add("installfiles", path.join(prefix, "share"), { prefixdir = "$(xmake-data)" })
+            os.cp(path.join(prefix, "share"), "data/share")
         end
     )
 end

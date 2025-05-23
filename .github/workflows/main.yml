@@ -29,6 +29,7 @@ jobs:
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
+      - uses: xmake-io/github-action-setup-xmake@v1
       - uses: astral-sh/setup-uv@v6
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
@@ -64,11 +65,6 @@ jobs:
           pattern: artifact-*
           merge-multiple: true
           path: dist
-      - name: Rename
-        run: |
-          sudo apt-get -y update
-          sudo apt-get -y install rename
-          rename 's/cp...-cp.../py3-none/' dist/*
       - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:

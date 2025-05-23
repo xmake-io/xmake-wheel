@@ -28,9 +28,6 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 
-[tool.xmake.module]
-name = "xmake"
-
 [[project.authors]]
 name = "ruki"
 email = "waruqi@gmail.com"
