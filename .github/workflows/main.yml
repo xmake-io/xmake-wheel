@@ -29,12 +29,6 @@ jobs:
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
-        with:
-          repository: xmake-io/xmake
-          path: xmake-src
-          submodules: true
-          ref: v2.9.9
       - uses: astral-sh/setup-uv@v6
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'

@@ -31,9 +31,6 @@ classifiers = [
 [tool.xmake.module]
 name = "xmake"
 
-[tool.xmake.xmaker]
-root = "xmake-src/core"
-
 [[project.authors]]
 name = "ruki"
 email = "waruqi@gmail.com"
