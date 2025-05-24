@@ -82,7 +82,10 @@ exclude_lines = [
 [tool.cibuildwheel]
 archs = ["all"]
 build = "cp312-*"
+# src/xmake/libc/dataptr.c:49:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+skip = "*_i686 *_armv7l"
 build-frontend = "build[uv]"
+before-all = "yum -y install gzip git"
 
 [tool.cibuildwheel.environment]
 XMAKE_ROOT = "y"
@@ -91,3 +94,7 @@ XMAKE_ROOT = "y"
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
 build-frontend = "build"
+
+[[tool.cibuildwheel.overrides]]
+select = ["*-musllinux_*"]
+before-all = "apk add gzip git"
