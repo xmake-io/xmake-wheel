@@ -10,7 +10,7 @@ do
     add_versions("v2.9.9", "e92505b83bc9776286eae719d58bcea7ff2577afe12cb5ccb279c81e7dbc702d")
 
     on_install(function(package)
-        import("package.tools.xmake").install(package, { "-P", "core" })
+        import("package.tools.xmake").install(package, { "-P", "core", "--pdcurses=n" })
     end)
 
     on_test(function(package)
