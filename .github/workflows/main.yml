@@ -14,8 +14,6 @@ permissions:
 
 env:
   files: dist/*
-  python-version: 3.x
-  cache: pip
 
 jobs:
   build-wheels-and-test:
