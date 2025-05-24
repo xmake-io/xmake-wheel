@@ -12,7 +12,7 @@ xmake --help
 Currently, we only support:
 
 - windows on amd64
-- macos on arm64
+- macos on arm64/amd64
 - linux on every platforms
 
 If you want to contribute for any unsupported platforms, such as windows on
