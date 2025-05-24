@@ -35,9 +35,7 @@ do
         function(target)
             local prefix = target:pkg("xmake"):installdir()
             target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(xmake-scripts)" })
-            -- https://github.com/xmake-io/xmake/discussions/6498
-            -- target:add("installfiles", path.join(prefix, "share"), { prefixdir = "$(xmake-data)" })
-            os.cp(path.join(prefix, "share"), "data/share")
+            target:add("installfiles", path.join(prefix, "(share/**)"), { prefixdir = "$(xmake-data)" })
         end
     )
 end
