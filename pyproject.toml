@@ -83,12 +83,14 @@ exclude_lines = [
 archs = ["all"]
 build = "cp312-*"
 # src/xmake/libc/dataptr.c:49:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
-skip = "*_i686 *_armv7l"
+# xmake-python wheel tag doesn't support universal2
+skip = "*_i686 *_armv7l *_universal2"
 build-frontend = "build[uv]"
 before-all = "yum -y install gzip git"
 
 [tool.cibuildwheel.environment]
 XMAKE_ROOT = "y"
+MACOSX_DEPLOYMENT_TARGET = "14.5"
 
 # https://github.com/astral-sh/uv/issues/10260
 [[tool.cibuildwheel.overrides]]
@@ -98,3 +100,7 @@ build-frontend = "build"
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_*"]
 before-all = "apk add gzip git"
+
+[[tool.cibuildwheel.overrides]]
+select = ["*-macosx_*"]
+before-all = "brew install xmake gzip git"
