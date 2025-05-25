@@ -37,7 +37,7 @@ jobs:
         with:
           name: artifact-${{matrix.runs-on}}
           path: |
-            dist/*
+            wheelhouse/*.whl
 
   build:
     needs:
