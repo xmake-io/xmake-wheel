@@ -34,8 +34,13 @@ do
     before_install(
         function(target)
             local prefix = target:pkg("xmake"):installdir()
-            target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(xmake-scripts)" })
-            target:add("installfiles", path.join(prefix, "(share/**)"), { prefixdir = "$(xmake-data)" })
+            if target:is_plat("windows") then
+                target:add("installfiles", path.join(prefix, "xmake"), { prefixdir = "$(xmake-scripts)" })
+                target:add("installfiles", path.join(prefix, "(*/**)"), { prefixdir = "$(xmake-data)" })
+            else
+                target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(xmake-scripts)" })
+                target:add("installfiles", path.join(prefix, "(share/**)"), { prefixdir = "$(xmake-data)" })
+            end
         end
     )
 end
