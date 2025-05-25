@@ -83,10 +83,9 @@ exclude_lines = [
 archs = ["all"]
 build = "cp312-*"
 # src/xmake/libc/dataptr.c:49:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
-# xmake-python wheel tag doesn't support universal2
-skip = "*_i686 *_armv7l *_universal2"
+# xmake-python doesn't support cross compiling
+skip = "*_i686 *_armv7l *-macosx_x86_64 *-win_arm64"
 build-frontend = "build[uv]"
-before-all = "yum -y install gzip git"
 
 [tool.cibuildwheel.environment]
 XMAKE_ROOT = "y"
@@ -96,6 +95,10 @@ MACOSX_DEPLOYMENT_TARGET = "14.5"
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
 build-frontend = "build"
+
+[[tool.cibuildwheel.overrides]]
+select = ["*-manylinux_*"]
+before-all = "yum -y install gzip git"
 
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_*"]
