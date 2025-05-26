@@ -12,7 +12,7 @@ description = {
   summary = 'A cross-platform build utility based on Lua',
   detailed = '',
   labels = { 'c', 'linux', 'c-plus-plus', 'package-manager', 'visual-studio', 'cmake', 'build', 'lua', 'objective-c', 'makefile', 'build-tool', 'wdk', 'xmake', 'tbox', 'cross-toolchains' } ,
-  homepage = 'https://luarocks.org/modules/waruqi/xmake',
+  homepage = 'https://xmake.io/',
   license = 'GPL-3.0'
 }
 
