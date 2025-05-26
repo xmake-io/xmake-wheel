@@ -12,8 +12,7 @@
     "xrepo": "bin/xrepo"
   },
   "devDependencies": {
-    "biome": "^0.3.3",
-    "tar": "^7.4.3"
+    "biome": "^0.3.3"
   },
   "scripts": {
     "prepack": "node scripts/build.cjs",

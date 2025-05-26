@@ -17,28 +17,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - runs-on: ubuntu-latest
-            shell: bash -e
-          - runs-on: macos-latest
-            shell: bash -e
-          - runs-on: windows-latest
-            shell: msys2
+        runs-on:
+          - macos-latest
+          - windows-latest
     runs-on: ${{matrix.runs-on}}
-    defaults:
-      run:
-        shell: ${{matrix.shell}} {0}
     steps:
       - uses: actions/checkout@v4
-      - uses: msys2/setup-msys2@v2
-        if: runner.os == 'Windows'
-      - name: Install dependencies
-        if: runner.os == 'Windows'
-        run: |
-          pacman -Sy --noconfirm mingw-w64-x86_64-nodejs mingw-w64-x86_64-gcc \
-            make
+      - uses: xmake-io/github-action-setup-xmake@v1
       - uses: actions/setup-node@v4
-        if: runner.os != 'Windows'
         with:
           node-version: latest
           registry-url: https://registry.npmjs.org
@@ -60,6 +46,7 @@ jobs:
       - build
     steps:
       - uses: actions/checkout@v4
+      - uses: xmake-io/github-action-setup-xmake@v1
       - uses: actions/download-artifact@v4
         with:
           pattern: artifact-*
