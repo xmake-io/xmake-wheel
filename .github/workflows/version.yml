@@ -18,6 +18,5 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
       - name: Update version
         run: |
-          scripts/update-version.pl pyproject.toml src/xmake/__init__.py \
-            package.json .github/workflows/main.yml
+          scripts/update-version.pl pyproject.toml package.json xmake.lua
       - uses: stefanzweifel/git-auto-commit-action@v5
