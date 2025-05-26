@@ -35,7 +35,7 @@ do
         function(target)
             local prefix = target:pkg("xmake"):installdir()
             if target:is_plat("windows") then
-                target:add("installfiles", path.join(prefix, "xmake"), { prefixdir = "$(xmake-scripts)" })
+                target:add("installfiles", path.join(prefix, "xmake.exe"), { prefixdir = "$(xmake-scripts)" })
                 target:add("installfiles", path.join(prefix, "(*/**)"), { prefixdir = "$(xmake-data)" })
             else
                 target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(xmake-scripts)" })
