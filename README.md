@@ -9,12 +9,6 @@ pip install xmake-wheel
 xmake --help
 ```
 
-```python
-from xmake import main
-
-main("--help")
-```
-
 ### Python Wheels
 
 List some related wheels which provide binary programs.
