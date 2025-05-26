@@ -1,3 +1,5 @@
+-- luacheck: ignore 111 113
+---@diagnostic disable: undefined-global
 option("xmake-platlib")
 do
     set_default("/../platlib")
@@ -31,5 +33,5 @@ do
     set_default("{version}")
 end
 option_end()
-set_prefixdir("/data", {bindir = "bin", libdir = "lib", includedir = "include"})
+set_prefixdir("/", {bindir = "bin", libdir = "lib", includedir = "include"})
 includes("..")
