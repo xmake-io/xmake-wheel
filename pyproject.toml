@@ -83,8 +83,9 @@ exclude_lines = [
 archs = ["all"]
 build = "cp312-*"
 # src/xmake/libc/dataptr.c:49:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
-# xmake-python doesn't support cross compiling
-skip = "*_i686 *_armv7l *-macosx_x86_64 *-macosx_universal2 *-win_arm64"
+# xmake doesn't support universal2
+# https://github.com/xmake-io/xmake/issues/6502
+skip = "*_i686 *_armv7l *-macosx_universal2"
 build-frontend = "build[uv]"
 
 [tool.cibuildwheel.environment]
