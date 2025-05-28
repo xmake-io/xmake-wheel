@@ -1,15 +1,10 @@
 #!/usr/bin/env node
 const os = require('os');
-const fs = require('fs');
 const path = require('path');
 const {spawnSync} = require('child_process');
 const {resolve} = require('path');
 
-const prefix = resolve(__dirname, '..', 'prebuilds', `xmake-${os.platform()}-${os.arch()}`)
-let bin = resolve(prefix, 'bin', path.basename(__filename));
-// windows
-if (!fs.existsSync(bin))
-  bin = resolve(prefix, path.basename(__filename));
+let bin = resolve(__dirname, '..', 'prebuilds', `xmake-${os.platform()}-${os.arch()}`, 'bin', path.basename(__filename));
 const cmd = spawnSync(bin, process.argv.slice(2))
 console.log(cmd.stdout.toString())
 console.error(cmd.stderr.toString())
