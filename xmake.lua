@@ -7,7 +7,7 @@ do
 
     set_urls("https://github.com/xmake-io/xmake/releases/download/$(version)/xmake-$(version).tar.gz",
         "https://github.com/xmake-io/xmake.git")
-    add_versions("v2.9.9", "e92505b83bc9776286eae719d58bcea7ff2577afe12cb5ccb279c81e7dbc702d")
+    add_versions("v2.9.8", "e92505b83bc9776286eae719d58bcea7ff2577afe12cb5ccb279c81e7dbc702d")
 
     on_install(function(package)
         import("package.tools.xmake").install(package, { "-P", "core", "--pdcurses=n" })
