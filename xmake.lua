@@ -36,10 +36,10 @@ do
             if target:is_plat("windows") then
                 target:add("installfiles", "scripts/xmake.cmd", { prefixdir = "$(bindir)" })
                 target:add("installfiles", "scripts/xmake.ps1", { prefixdir = "$(bindir)" })
-                target:add("installfiles", path.join(prefix, "*"), { prefixdir = "$(datadir)" })
+                target:add("installfiles", path.join(prefix, "(**)"), { prefixdir = "$(datadir)" })
             else
                 target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(bindir)" })
-                target:add("installfiles", path.join(prefix, "share/**"), { prefixdir = "$(datadir)" })
+                target:add("installfiles", path.join(prefix, "share/(**)"), { prefixdir = "$(datadir)" })
             end
         end
     )
