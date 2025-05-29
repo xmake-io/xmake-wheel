@@ -77,11 +77,9 @@ exclude_lines = [
 
 [tool.cibuildwheel]
 archs = ["all"]
-build = "cp312-*"
-# src/xmake/libc/dataptr.c:49:26: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
-# xmake doesn't support universal2
+build = "cp313-*"
 # https://github.com/xmake-io/xmake/issues/6502
-skip = "*_i686 *_armv7l *-macosx_universal2"
+skip = "*-macosx_universal2"
 build-frontend = "build[uv]"
 
 [tool.cibuildwheel.environment]
