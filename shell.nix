@@ -6,7 +6,6 @@ with pkgs;
 mkShell {
   name = "xmake-wheel";
   buildInputs = [
-    stdenv.cc
     pkg-config
     gnumake
 
