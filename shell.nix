@@ -9,6 +9,10 @@ mkShell {
     pkg-config
     gnumake
 
+    curl
+    gnutar
+    gzip
+
     (python3.withPackages (
       p: with p; [
         uv
