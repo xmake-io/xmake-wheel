@@ -1,11 +1,11 @@
 [build-system]
-requires = ["xmake-python"]
+requires = ["xmake-python >= 0.1.5"]
 build-backend = "xmake_python"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [project]
 name = "xmake-wheel"
-version = "2.9.9"
+version = "3.0.0"
 description = "A cross-platform build utility based on Lua"
 readme = "README.md"
 keywords = ["xmake"]

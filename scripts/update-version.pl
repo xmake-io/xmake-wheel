@@ -12,5 +12,5 @@ BEGIN {
 
 s/(?<=version = ")[^"]+/$version/;
 s/(?<=  "version": ")[^"]+/$version/;
-s/(?<=    add_versions("v)[^"]+/$version/;
-s/(?<=    add_versions("v$version", ")[^"]+/$sha/;
+s/(?<=    add_versions\("v)[^"]+/$version/;
+s/(?<=    add_versions\("v$version", ")[^"]+/$sha/;
