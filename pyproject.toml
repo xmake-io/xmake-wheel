@@ -92,13 +92,9 @@ select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
 build-frontend = "build"
 
 [[tool.cibuildwheel.overrides]]
-select = ["*-manylinux_*"]
-before-all = "yum -y install gzip git"
-
-[[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_*"]
-before-all = "apk add gzip git"
+before-all = "apk add gzip"
 
 [[tool.cibuildwheel.overrides]]
 select = ["*-macosx_*"]
-before-all = "brew install xmake gzip git"
+before-all = "brew install xmake"

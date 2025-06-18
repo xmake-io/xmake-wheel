@@ -8,6 +8,7 @@ BEGIN {
     $sha =
 `curl -s https://github.com/xmake-io/xmake/releases/download/$version/xmake-$version.tar.gz | sha256sum`;
     chomp $sha;
+    $sha =~ s/\s*-//;
 }
 
 s/(?<=version = ")[^"]+/$version/;

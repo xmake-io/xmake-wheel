@@ -5,9 +5,8 @@ do
     set_homepage("https://github.com/xmake-io/xmake")
     set_description("xmake - A cross-platform build utility based on Lua")
 
-    set_urls("https://github.com/xmake-io/xmake/releases/download/$(version)/xmake-$(version).tar.gz",
-        "https://github.com/xmake-io/xmake.git")
-    add_versions("v3.0.0", "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5  -")
+    set_urls("https://github.com/xmake-io/xmake/releases/download/$(version)/xmake-$(version).tar.gz")
+    add_versions("v3.0.0", "e749c2a902a1b88e6e3b73b78962a6417c9a04f91ce3c6e174a252598f10eb28")
 
     on_install(function(package)
         import("package.tools.xmake").install(package, { "-P", "core", "--pdcurses=n" })
