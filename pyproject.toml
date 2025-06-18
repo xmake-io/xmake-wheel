@@ -94,7 +94,3 @@ build-frontend = "build"
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_*"]
 before-all = "apk add gzip"
-
-[[tool.cibuildwheel.overrides]]
-select = ["*-macosx_*"]
-before-all = "brew install xmake"
