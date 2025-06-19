@@ -7,12 +7,14 @@ target("phony")
 do
     set_kind("phony")
     add_packages("xmake")
+    if is_plat("windows") then
+        add_installfiles("scripts/xmake.cmd", { prefixdir = "$(bindir)" })
+        add_installfiles("scripts/xmake.ps1", { prefixdir = "$(bindir)" })
+    end
     before_install(
         function(target)
             local prefix = target:pkg("xmake"):installdir()
             if target:is_plat("windows") then
-                target:add("installfiles", "scripts/xmake.cmd", { prefixdir = "$(bindir)" })
-                target:add("installfiles", "scripts/xmake.ps1", { prefixdir = "$(bindir)" })
                 target:add("installfiles", path.join(prefix, "(**)"), { prefixdir = "$(datadir)" })
             else
                 target:add("installfiles", path.join(prefix, "bin/*"), { prefixdir = "$(bindir)" })
