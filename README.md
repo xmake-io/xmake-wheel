@@ -11,27 +11,8 @@ xmake --help
 
 ### Python Wheels
 
-List some related wheels which provide binary programs.
-
-#### Build Systems
-
-- [cmake-python-distributions](https://github.com/scikit-build/cmake-python-distributions)
-- [ninja-python-distributions](https://github.com/scikit-build/ninja-python-distributions)
-
-#### Linters
-
-- [cppcheck-wheel](https://github.com/msclock/cppcheck-wheel)
-
-#### Formatters
-
-- [astyle-wheel](https://github.com/Freed-Wu/astyle-wheel)
-- [clang-format-wheel](https://github.com/ssciwr/clang-format-wheel)
-
-#### Misc
-
-- [patchelf-pypi](https://github.com/mayeut/patchelf-pypi): used by
-  [cibuildwheel](https://github.com/pypa/cibuildwheel)
-- [nodejs-wheel](https://pypi.org/project/nodejs-wheel)
+[Wiki](https://github.com/xmake-io/xmake-wheel/wiki) lists some related wheels
+which provide binary programs.
 
 ## [npmjs.org](https://www.npmjs.com/package/xmake-build-system)
 
