@@ -7,7 +7,7 @@ build-backend = "xmake_python"
 name = "xmake-wheel"
 version = "3.0.0"
 description = "A cross-platform build utility based on Lua"
-readme = "README.md"
+readme = "docs/python/README.md"
 keywords = ["xmake"]
 classifiers = [
   "Development Status :: 3 - Alpha",

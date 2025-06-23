@@ -7,6 +7,7 @@
   "bugs": "https://github.com/xmake-io/xmake-wheel/issues",
   "license": "GPL-3.0-only",
   "keywords": ["xmake"],
+  "readme": "docs/nodejs/README.md",
   "bin": {
     "xmake": "bin/xmake",
     "xrepo": "bin/xrepo"

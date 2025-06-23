@@ -10,7 +10,9 @@ version = modrev ..'-'.. specrev
 
 description = {
   summary = 'A cross-platform build utility based on Lua',
-  detailed = '',
+  detailed = [[xmake is a cross-platform build utility based on Lua. This project package it to
+[luarocks.org](https://luarocks.org/modules/Freed-Wu/xmake/), which is mainly
+used by [luarocks-build-xmake](https://github.com/xmake-io/luarocks-build-xmake).]],
   labels = { 'c', 'linux', 'c-plus-plus', 'package-manager', 'visual-studio', 'cmake', 'build', 'lua', 'objective-c', 'makefile', 'build-tool', 'wdk', 'xmake', 'tbox', 'cross-toolchains' } ,
   homepage = 'https://xmake.io/',
   license = 'GPL-3.0'

@@ -6,7 +6,7 @@ BEGIN {
     chomp $version;
     $version =~ s/^v//;
     $sha =
-`curl -s https://github.com/xmake-io/xmake/releases/download/$version/xmake-$version.tar.gz | sha256sum`;
+`curl -sL https://github.com/xmake-io/xmake/releases/download/$version/xmake-$version.tar.gz | sha256sum`;
     chomp $sha;
     $sha =~ s/\s*-//;
 }
