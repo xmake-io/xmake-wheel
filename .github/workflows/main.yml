@@ -27,32 +27,24 @@ jobs:
     runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.23
+      - name: Build sdist
+        if: runner.os == 'macOS'
+        run: |
+          uv build --sdist -o wheelhouse
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-${{matrix.runs-on}}
           path: |
-            wheelhouse/*.whl
+            wheelhouse/*
 
   build:
     needs:
       - build-wheels-and-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
-      - name: Build sdist
-        run: |
-          uv build --sdist
-      - uses: actions/upload-artifact@v4
-        if: "! startsWith(github.ref, 'refs/tags/')"
-        with:
-          name: artifact-sdist
-          path: |
-            ${{env.files}}
       - uses: actions/download-artifact@v4
         with:
           pattern: artifact-*

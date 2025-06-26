@@ -86,6 +86,11 @@ build-frontend = "build[uv]"
 XMAKE_ROOT = "y"
 MACOSX_DEPLOYMENT_TARGET = "14.5"
 
+[[tool.cibuildwheel.overrides]]
+select = ["*-macosx_*", "*-win*"]
+# AssertionError: uv not found
+before-all = "pip install uv"
+
 # https://github.com/astral-sh/uv/issues/10260
 [[tool.cibuildwheel.overrides]]
 select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
