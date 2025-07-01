@@ -20,4 +20,4 @@ jobs:
         run: |
           scripts/update-version.pl pyproject.toml package.json \
             packages/x/xmake/xmake.lua
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
