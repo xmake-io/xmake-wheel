@@ -1,6 +1,6 @@
 {
   "name": "xmake-build-system",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A cross-platform build utility based on Lua",
   "repository": "https://github.com/xmake-io/xmake-wheel",
   "homepage": "https://xmake.io/",
