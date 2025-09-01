@@ -26,7 +26,7 @@ jobs:
           - windows-latest
     runs-on: ${{matrix.runs-on}}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/setup-qemu-action@v3
         if: runner.os == 'Linux'
       - uses: pypa/cibuildwheel@v2.23
