@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: xmake-io/github-action-setup-xmake@v1
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: latest
           registry-url: https://registry.npmjs.org
@@ -52,7 +52,7 @@ jobs:
           pattern: artifact-*
           merge-multiple: true
           path: prebuilds
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: latest
           registry-url: https://registry.npmjs.org
