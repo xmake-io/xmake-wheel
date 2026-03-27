@@ -1,12 +1,13 @@
 #!/usr/bin/env -S perl -pi
 BEGIN {
     exit if scalar @ARGV == 0;
-    $version =
+    my $tag =
 `curl -s https://api.github.com/repos/xmake-io/xmake/releases/latest | jq -r .tag_name`;
-    chomp $version;
+    chomp $tag;
+    $version = $tag;
     $version =~ s/^v//;
     $sha =
-`curl -sL https://github.com/xmake-io/xmake/releases/download/$version/xmake-$version.tar.gz | sha256sum`;
+`curl -sL https://github.com/xmake-io/xmake/releases/download/$tag/xmake-$tag.tar.gz | sha256sum`;
     chomp $sha;
     $sha =~ s/\s*-//;
 }
